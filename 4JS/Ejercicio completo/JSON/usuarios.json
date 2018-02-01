@@ -1,0 +1,15 @@
+{
+	"usuarios": 
+		[
+            {
+                "identificacion":"80855010",
+                "nombre":"Andres ",
+                "Apellido":"Montealegre",
+                "edad":32,
+                "email":"andresmg@gmail.com",
+                "telefono": "546 0066",
+                "direccion":"Carrera 81",
+                "estado":"Activo"
+            }
+        ]
+}

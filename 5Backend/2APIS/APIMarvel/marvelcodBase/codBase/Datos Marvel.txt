@@ -1,0 +1,35 @@
+Hi AMontea8182!
+
+
+Your public key
+1ec88caa7487556a1997e7f439e45f5f
+Your private key
+0a587cf9abc4c99f27443dd435646b7811ab7933
+Read more about how to use your keys to sign requests.
+
+Your rate limit:
+ 
+3000
+calls/day  Number of calls your application can make per day.
+Your authorized referrers
+List any domains that can make calls to the Marvel Comics API using your API key here:
+
+
+developer.marvel.com
+ delete
+add a new referrer
+Note: List the domain
+
+
+Note: List the domain and path only - don't include "http" or other scheme designations. Only use the characters a-z, 0-9, ., _, -, and *.
+
+Read more about how to authorize referring domains in browser-based apps and web sites.
+
+Tell us about your projects
+Keep us in the loop about what you're building! Use the space below to add or update information about what you're creating with the Marvel Comics API.
+
+num+ pri+ pub
+19850a587cf9abc4c99f27443dd435646b7811ab79331ec88caa7487556a1997e7f439e45f5f
+
+HASH
+267f2d6cd465563a1ef38f7dd1da4cfc

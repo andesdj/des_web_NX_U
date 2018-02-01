@@ -1,0 +1,44 @@
+{
+	"personas":
+	[
+		{
+			"nombre": "Andres Montealegre",
+			"edad":	32,
+			"Direccion":"Carrera 81 70 48",
+			"Telefono":	"310 311 63 16",
+			"estudios":
+			[
+				{
+					"primaria": {
+						"Lugar": "Primaria Virtual",
+						"Fecha": "01/01/2012-01/01/2015"
+					},
+					"secundaria":{
+						"Lugar": "Primaria Virtual",
+						"Fecha": "01/01/2016-01/01/2018"
+					}
+				}
+			]
+		},
+
+		{
+			"nombre": "DJ  ANDES ",
+			"edad":	32,
+			"Direccion":"Calle 81 70 48",
+			"Telefono":	"310 311 63 16",
+			"estudios":
+			[
+				{
+					"primaria": {
+						"Lugar": "Primaria  de DJ",
+						"Fecha": "01/01/2012-01/01/2015"
+					},
+					"secundaria":{
+						"Lugar": "Secundaria de DJ",
+						"Fecha": "01/01/2016-01/01/2018"
+					}
+				}
+			]
+		}
+	]
+}

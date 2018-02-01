@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title></title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="andes"></div>
+  </div>
+  <script type="text/javascript">
+      var user="andesdj";
+      var password="Tranc34ndes$$$."
+      var tok = user + ':' + password;
+      var usu= btoa(tok)
+      var token, token_id;
+  $.ajax({
+      url: 'http://api.github.com/authorizations',
+      headers: {
+        Authorization: 'Basic '+btoa(tok)
+      },
+      type:'POST',
+      data: JSON.stringify({
+          scopes: ["public_repo"],
+          note: "crear_repositorio"
+      }),
+      complete: function(xhr,message,settings){
+          if(xhr.status !=201){
+            console.log(xhr,message,settings);
+            return;
+          }
+          console.log("!!!Token Creado!!!!");
+          token =xhr.responseJSON.token;
+          token_id=xhr.responseJSON.id;
+          crearRepositorio(token);
+          console.log("TOKEN ID "+token_id);
+          console.log("token Nª" +token)
+          ht(token);
+      }
+  });
+
+  function ht(a) {
+    document.getElementById("andes").innerHTML=toString(a)
+  }
+
+  function crearRepositorio(ab){
+      $.ajax({
+        url: 'http://api.github.com/user/repos',
+        type: 'POST',
+        headers: {
+            Authorization: 'token'+ ab
+        },
+        data: JSON.stringify({
+          "name": "API-Repost",
+          "description":    "Este repositorio fue creado desde AJAX usando API v3",
+          "homepage":       "http://github.com/",
+          "private":        false,
+          "has_issues":     true,
+          "has_wiki":       true,
+          "has_downloads":  true
+          }),
+
+        complete: function(xhr,message,settings){
+            if(xhr.status!=201 ){
+                  console.log("Error crear repos");
+                  console.log(xhr,message,settings);
+                  return;
+              }
+            console.log("Repositorio Creado Correctamente!!!");
+            borrarToken();
+        }
+    })
+  }
+
+  function borrarToken() {
+         $.ajax({
+
+                url: 'http://api.github.com/authorizations/'+token_id,
+                type: 'DELETE',
+                headers: {
+                    Authorization: 'Basic ' + btoa(tok)
+                },
+              complete: function(xhr,message,settings){
+                  if(xhr.status!=201 ){
+                      console.log(xhr,message,settings);
+                      return;
+                  }  
+              console.log("TOKEN BORRADO, ID:  " +token_id);
+            }
+
+        })
+
+  }
+  </script>
+</body>
+</html>
